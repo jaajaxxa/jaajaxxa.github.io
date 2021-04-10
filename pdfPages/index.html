@@ -14,12 +14,27 @@
 <link rel="stylesheet" href="./Style/style.css">
 <link rel="shortcut icon" href="../Media/laser.ico">
 <script src="Scripts/script.js"></script>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+  document.addEventListener("adobe_dc_view_sdk.ready", function(){
+    var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+    adobeDCView.previewFile({
+      content:{ location: 
+        { url: "https://jaajaxxa.github.io/pdf/pdf1.pdf"}},
+      metaData:{fileName: "pdf1.pdf"}
+    },
+    {
+      embedMode: "SIZED_CONTAINER"
+    });
+  });
+</script>
 <body>
 
 
 <!-- Side Navigation -->
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-white w3-animate-left w3-card" style="z-index:3;width:320px;"
      id="mySidebar">
+
     <a href="../index.html" class="w3-bar-item w3-button w3-border-bottom w3-large"
        style="background-color: #48cd2b"><img
             src="../Media/logo.png" title="Accueil"
@@ -171,33 +186,9 @@
         <p>Bienvenue sur les notes de cours. Elles ont pour but de vous aider à apprendre ou reviser les fondamentaux avant d'arriver à l'École
             Internationale du Waist</p>
             
-        <ul>
-          <li>PDF 1 : <a href="pdf/pdf1.pdf">lien</a></li>
-          <li>PDF 2 : <a href="pdf/pdf2.pdf">lien</a></li>
-        </ul>
-        <p>Ce cours est grandement inspiré, pour ne pas dire complétement, d'un cours de l'OPI que vous pouvez retrouver
-            <a href="http://www.optique-ingenieur.org/fr/cours/OPI_fr_M01_C03/co/Grain_OPI_fr_M01_C03.html">ici</a>.
-            Cependant, ce cours original n'étant plus mis à jour, les formules ne sont plus accessibles tandis qu'elles
-            le resteront sur notre site. Notez que chaque cours est disponible au format PDF, pour le télécharger il
-            suffit d'aller sur la page du cours en question et de cliquer sur "Télécharger au format PDF" en bas de la
-            barre de gauche.</p>
-        <p>Si vous n'etes pas familier avec la notion de laser, je vous conseille le cours très complet d'OPI: <a
-                href="http://www.optique-ingenieur.org/fr/cours/OPI_fr_M01_C01/co/Grain_OPI_fr_M01_C01.html">Cours sur
-            les Lasers</a></p>
-        <p>Bonne lecture</p>
-        <p>Ema</p>
-        <hr>
-        <div class="w3-card-4 w3-margin avis">
-            <div class="w3-margin">
-                <h4>Cours proposé par:</h4>
-                <img id="EMA" src="../Media/Personnes/a.jpg" alt="Ema" style="width:250px; margin-right: 2rem"
-                     align="left">
-                <div style="height: 260px">
-                    <h3><b>Ema Gresal,</b></h3>
-                    <h5>Professeur d'optique à l'EIW.</h5>
-                </div>
-            </div>
-        </div>
+        <div id="adobe-dc-view" style="height: 1080px; width: 1500px;"></div>
+
+
         <p></p>
     </div>
 
